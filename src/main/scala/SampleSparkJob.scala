@@ -1,8 +1,21 @@
 import org.apache.spark.{SparkContext, SparkConf}
+import org.apache.spark.sql.SparkSession
 
-class SampleSparkJob {
+object SampleSparkJob {
   def main(args: Array[String]) {
     // Bootstrap Spark
+    println("Hello, Scala!")
+
+    /*
+    val spark: SparkSession = SparkSession.builder()
+      .appName("Spark example")
+      .master("local[*]")
+      .config("option", "some-value")
+      .getOrCreate()
+*/
+    //val sc = spark.sparkContext
+    //val sqlContext = spark.sqlContext
+
     val conf = new SparkConf().setAppName("Sample Spark Scala Application")
     val sc = new SparkContext(conf)
 

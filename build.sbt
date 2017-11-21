@@ -1,8 +1,8 @@
 name := "sample-spark-project"
 version := "1.0"
-scalaVersion := "2.10.5"
+scalaVersion := "2.11.8"
 
-val sparkVersion = "1.4.1"
+val sparkVersion = "2.1.1"
 
 // Note the dependencies are provided
 libraryDependencies += "org.apache.spark" %% "spark-core" % sparkVersion % "provided"
@@ -19,5 +19,5 @@ assemblyMergeStrategy in assembly := {
 
 lazy val spark_run = taskKey[Unit]("Builds the assembly and ships it to the Spark Cluster")
 spark_run := {
-  ("/full/path/to/bin/spark_submit " + assembly.value) !
+  ("D:/dev-tools/spark-2.2.0-bin-hadoop2.7/ " + assembly.value) !
 }
